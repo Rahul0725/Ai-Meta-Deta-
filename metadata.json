@@ -1,0 +1,7 @@
+{
+  "name": "AI Image Metadata Extractor",
+  "description": "A powerful tool to extract hidden EXIF data, perform AI-based visual analysis, OCR, and privacy checks on images.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
