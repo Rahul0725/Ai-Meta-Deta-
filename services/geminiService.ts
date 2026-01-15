@@ -1,17 +1,9 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { AIAnalysisResult } from '../types';
 
-const getAiClient = () => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    throw new Error("API Key not found in environment variables");
-  }
-  return new GoogleGenAI({ apiKey });
-};
-
 export const analyzeImageWithGemini = async (base64Image: string): Promise<AIAnalysisResult> => {
   try {
-    const ai = getAiClient();
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     // Using gemini-3-flash-preview for fast, multimodal analysis with structured output
     const model = 'gemini-3-flash-preview';
